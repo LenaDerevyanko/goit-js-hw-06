@@ -4,8 +4,10 @@ const totalCategories = document.querySelectorAll('.item');
 console.log(`Number of categories: ${totalCategories.length}`);
 
 const categoriesArray = [...totalCategories]
-    .map( categories => `Category: ${categories.children[0].textContent}
-Elements: ${categories.children[1].children.length}`)
+    .map( categories => `Category: ${categories.firstElementChild.textContent}
+Elements: ${categories.lastElementChild.children.length}`)
     .join("\n");
 console.log(categoriesArray);
     
+
+

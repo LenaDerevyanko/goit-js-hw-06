@@ -13,14 +13,14 @@ const images = [
   },
 ];
 
-const ulElement = document.querySelector('.gallery');
-
-
-images.map(image => {
-    const construct = `<li class="images__item"><img class = "image" src="${image.url}" alt="${image.alt}"></img></li>`;
-    
-  ulElement.insertAdjacentHTML('beforeend', construct);
+const list = document.querySelector('.gallery');
+let markup = '';
+images.forEach(img => {
+  markup = images
+    .map(
+      img =>
+        `<li class="gallery__item"><img class="gallery__img" src="${img.url}" alt="${img.alt}"></li>`
+    )
+    .join('');
 });
-
-
-console.log(ulElement);
+list.insertAdjacentHTML('afterbegin', markup);
